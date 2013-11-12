@@ -9,6 +9,7 @@ class UrlMappings {
 
 		"/"(view:"/index")
 		"/index2" (view:"/index2")
+		"/secondPage" (view:"/secondPage")
 		"500"(view:'/error')
 		"/example" (view:"example")
                 "/login/$action?"(controller: "login")

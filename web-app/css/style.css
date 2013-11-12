@@ -1,8 +1,42 @@
+@font-face{
+	font-family: Birch;
+	src: url('../fonts/BirchStd.otf');
+}
+
+h1{
+	font-family:Georgia, serif;
+}
+.homeButton{
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #d42a31 /*{a-bar-background-start}*/), to( #ad2328 /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/);
+
+	float:left;
+	padding:1px;
+	width:30%;
+	height:100px;
+	margin:2px;
+	color:#fff;
+	text-align:center;
+
+	border:solid 1px #660000;
+	padding-top: 10px;
+
+
+}
+.homeButton:hover{
+	background-color:#cc0000;
+}
+
 /*********************************************************
 JQUERY DEFAULT CSS OVERRIDES
 **********************************************************/
 .ui-panel {
-    width: 100% !important;
+	width: 100% !important;
 
 }
 
@@ -10,7 +44,7 @@ JQUERY DEFAULT CSS OVERRIDES
 @media screen and (orientation:portrait) {
 	.ui-navbar li .ui-btn{
 		height:5em;
-		padding-top:2em;
+
 	}
 }
 /* landscape view */

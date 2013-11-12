@@ -1,31 +1,27 @@
-<!--
-  To change this license header, choose License Headers in Project Properties.
-  To change this template file, choose Tools | Templates
-  and open the template in the editor.
--->
 
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Dimes Server Reviews</title>
-		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="${resource(dir:'css', file:'finedine.css')}" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
 		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 		<script type="text/javascript" src="https://rawgithub.com/padolsey/prettyPrint.js/master/prettyprint.js"></script>
-
 		<g:javascript src="js.js" />
+		<!-- Custom overwrite spreadsheet-->
 		<link rel="stylesheet" href="${resource(dir:'css', file:'style.css')}">
 	</head>
 	<body>
 		<!-- Example restaurant page -->
-		<div data-role="page" id="example" data-theme="c">
-			<div data-role="header" data-id="main" data-position="fixed" data-theme="c">
+		<div data-role="page" id="example" data-theme="a">
+			<div data-role="header" data-id="main" data-position="fixed" data-theme="a">
 				<a href="/DimesApp/" data-role="button" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
 				<h1>Dimes</h1>
 				<a href="#settings" data-role="button" data-icon="gear" data-transition="slide">Settings</a>
@@ -59,13 +55,13 @@
 				<p>[Gender Icon] This waitress is smokin' hot! Half-Asians are the best after all.</p>
 
 			</div>
-			<div data-id="main" data-role="footer" data-position="fixed" data-theme="c">
+			<div data-id="main" data-role="footer" data-position="fixed" data-theme="a">
 				<h1>Advertisement</h1>
 			</div>
 		</div>
 		<!-- Add review -->
-		<div data-role="page" id="addReview" data-theme="c">
-			<div data-role="header" data-id="main" data-position="fixed" data-theme="c">
+		<div data-role="page" id="addReview" data-theme="a">
+			<div data-role="header" data-id="main" data-position="fixed" data-theme="a">
 				<a href="/DimesApp/" data-role="button" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
 				<h1>Dimes</h1>
 				<a href="#settings" data-role="button" data-icon="gear" data-transition="slide">Settings</a>
@@ -75,7 +71,7 @@
 
 
 			</div>
-			<div data-id="main" data-role="footer" data-position="fixed" data-theme="c">
+			<div data-id="main" data-role="footer" data-position="fixed" data-theme="a">
 				<h1>Advertisement</h1>
 			</div>
 		</div>
