@@ -21,6 +21,7 @@ function success(position) {
     Geo.lng = position.coords.longitude;
     var latitude = Geo.lat.toString();
     var longitude = Geo.lng.toString();
+    //PASS THIS TO THE BACK END
     var latLng = latitude + "," + longitude;
 
     //yelp search terms
@@ -38,7 +39,8 @@ function success(position) {
     parameters = [];
     parameters.push(['term', terms]);
     //ll = latitude and longitude, change to location, near for places located in var near
-    parameters.push(['location', near]);
+    parameters.push(['ll', latLng]);
+
     parameters.push(['callback', 'cb']);
     parameters.push(['oauth_consumer_key', auth.consumerKey]);
     parameters.push(['oauth_consumer_secret', auth.consumerSecret]);

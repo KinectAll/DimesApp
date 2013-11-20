@@ -63,13 +63,11 @@
 		<div data-role="page" id="addReview" data-theme="a">
 			<div data-role="header" data-id="main" data-position="fixed" data-theme="a">
 				<a href="/DimesApp/" data-role="button" data-icon="home" data-transition="slide" data-direction="reverse">Home</a>
-				<h1>Dimes</h1>
+				<h1>FineDine</h1>
 				<a href="#settings" data-role="button" data-icon="gear" data-transition="slide">Settings</a>
 			</div>
 			<div data-role="content">
 				<h2>Add review</h2>
-
-
 			</div>
 			<div data-id="main" data-role="footer" data-position="fixed" data-theme="a">
 				<h1>Advertisement</h1>

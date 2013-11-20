@@ -6,7 +6,7 @@
 	<head>
 		<title>Dimes Server Reviews</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="${resource(dir:'css', file:'finedine.css')}" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -31,9 +31,9 @@
 				<br><br>
 				<g:form controller="userComments" action="findTerm" name="userResponse" >
 					<label for="search-terms" >Search For:</label>
-					<input data-theme="b" type="search" name="term" id="search-terms" placeholder="Examples: Earls, JOEY, CHOP" data-theme="c">
+					<input data-theme="b" type="search" name="term" id="search-terms" placeholder="Examples: Earls, JOEY, CHOP">
 					<label for="search-location">Near:</label>
-					<input data-theme="b" type="search" name="location" id="search-location" placeholder="Example: Calgary" data-theme="c">
+					<input data-theme="b" type="search" name="location" id="search-location" placeholder="Example: Calgary">
 					<g:submitButton name="submit" value="Search"
 						onclick="if(this.parentNode.parentNode.checkValidity()) {
 							${remoteFunction(controller:'userComments',
@@ -48,7 +48,7 @@
 		    <!-- Settings Panel-->
 			<div data-role="panel" id="settings" data-theme="a" data-display="overlay" data-position="right">
 				<div data-role="header" data-theme="a" data-position="fixed" >
-					<a href="#main" data-rel="close" data-role="button" data-icon="back" data-iconpos="notext" >Close Panel</a>
+					<a href="#main" data-rel="close" data-role="button" data-icon="back" data-iconpos="notext">Close Panel</a>
 					<h1>Settings</h1>
 				</div>
 				<form method="post" action="">
@@ -70,13 +70,12 @@
 					<input type="submit" value="Save Changes" data-inline="true" data-icon="check" style="margin: 0 auto;" onclick="alert('Changes saved.')">
 				</form>
 			</div>
-			<div data-role="header" data-id="main" data-position="fixed" data-theme="a">
+			<div data-role="header" data-id="main" data-position="fixed" data-theme="a" id="homeHeader">
 				<img src="${resource(dir:'images',file:'FineDine.png')}" alt="topSpots">
 				<a href="#settings" data-role="button" data-icon="gear" data-transition="slide" class="ui-btn-right" data-iconpos="notext">Settings</a>
 			</div>
 			<div data-role="content" >
-				<label for="search-basic" class="ui-hidden-accessible">Search Input:</label>
-				<input type="search" name="search" id="search-basic" placeholder="Search" data-theme="b">
+
 				<!--
 				<div data-role="navbar" >
 					<ul>
@@ -89,41 +88,44 @@
 					</ul>
 				</div>
 				-->
-				<div style="margin:0;">
-					<a href="#near" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'nearMe.png')}" alt="Near Me" style="position:relative;">
-						</div>
-					</a>
-					<a href="#browse" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'browse.png')}" alt="Browse" style="position:relative;">
-						</div>
-					</a>
-					<a href="#" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'hotSpots.png')}" alt="Hot Spots" style="position:relative;">
-						</div>
-					</a>
-					<a href="#" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'topSpots.png')}" alt="topSpots" style="position:relative;">
-						</div>
-					</a>
-					<a href="#" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'weeklySpot.png')}" alt="weeklySpot.png" style="position:relative;">
-						</div>
-					</a>
-					<a href="#" data-transition="slide">
-						<div class="homeButton">
-							<img src="${resource(dir:'images',file:'featured.png')}" alt="Featured" style="position:relative;">
-						</div>
-					</a>
-
+				<div id="homeWrapper">
+					<label for="search-basic" class="ui-hidden-accessible">Search Input:</label>
+					<input type="search" name="search" id="search-basic" placeholder="Search" data-theme="c">
+					<div id="homeButtonWrapper">
+						<a href="#near" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'nearMe.png')}" alt="Near Me">
+							</div>
+						</a>
+						<a href="#browse" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'browse.png')}" alt="Browse">
+							</div>
+						</a>
+						<a href="#" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'hotSpots.png')}" alt="Hot Spots">
+							</div>
+						</a>
+						<a href="#" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'topSpots.png')}" alt="topSpots">
+							</div>
+						</a>
+						<a href="#" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'weeklySpot.png')}" alt="weeklySpot.png">
+							</div>
+						</a>
+						<a href="#" data-transition="slide">
+							<div class="homeButton">
+								<img src="${resource(dir:'images',file:'featured.png')}" alt="Featured">
+							</div>
+						</a>
+					</div>
 				</div>
 			</div>
-			<div data-id="main" data-role="footer" data-position="fixed" data-theme="a">
+			<div data-id="main" data-role="footer" data-position="fixed" data-theme="a" id="homeFooter">
 				<h1>Advertisement</h1>
 			</div>
 		</div>
@@ -179,18 +181,61 @@
 		</div>
 		<script>
 			$(document).ready(function() {
+				//open search panel when click on search par
 				$("#search-basic").on("click", function() {
 					$( "#searchPanel" ).panel( "open");
 				});
-			});
+
+				var wrapperPos = (($("#homeWrapper").width()/2) - ($("#homeButtonWrapper").width()/2));
+
+				$("#homeButtonWrapper").css("left", wrapperPos);
+
+				if(window.innerHeight > window.innerWidth){
+					//center #homeWrapper when portrait
+					var toppos = ($(window).height()/2) - ($("#homeWrapper").height()/2);
+					$("#homeWrapper").css("top", toppos - $("#homeHeader").height());
+					$("#homeFooter").show();
+					$("#search-basic").css("width", $("#homeWrapper").width());
+				}
+				else{
+					//center Landscape
+					var leftpos = ($(window).width()/2) - ($("#homeWrapper").width()/2);
+					$("#homeWrapper").css("left", leftpos);
+					$("#homeWrapper").css("top", 35 - $("#homeHeader").height());
+					$("#homeFooter").hide();
+				}
+				window.addEventListener("orientationchange", function() {
+					if(window.innerHeight > window.innerWidth){
+						//center #homeWrapper
+						var leftpos3 = ($(window).width()/2) - ($("#homeWrapper").width()/2);
+						$("#homeWrapper").css("left", leftpos3 -10);
+						var toppos2 = ($(window).height()/2) - ($("#homeWrapper").height()/2);
+						$("#homeWrapper").css("top", toppos2 - $("#homeHeader").height());
+						$("#homeFooter").show();
+					}
+					else{
+						var leftpos2 = ($(window).width()/2) - ($("#homeWrapper").width()/2);
+						$("#homeWrapper").css("left", leftpos2);
+						$("#homeWrapper").css("top", 35 - $("#homeHeader").height());
+						$("#homeFooter").hide();
+					}
+				});
+				}, false);
+
 		</script>
 	</body>
 </html>
 <!--
-TODO:
+TO DO:
+
+Sort by rating (top spots)
+Near Me
+
+TO ADD: (2 more weeks)
+Favorites
 Check-ins (Yelp)
 Friends (where they've been, ratings)
 recently reviewed
 website for sneakpeak subscribe stuff
-aws - 
+aws -
 -->

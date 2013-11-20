@@ -6,6 +6,18 @@
 h1{
 	font-family:Georgia, serif;
 }
+#homeWrapper{
+	position:absolute;
+	width:90%;
+	text-align:center;
+
+}
+#homeButtonWrapper{
+	margin:0 auto;
+	position:relative;
+	width:100%;
+	text-align:center;
+}
 .homeButton{
 
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #d42a31 /*{a-bar-background-start}*/), to( #ad2328 /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
@@ -16,8 +28,9 @@ h1{
 	background-image:         linear-gradient( #d42a31 /*{a-bar-background-start}*/, #ad2328 /*{a-bar-background-end}*/);
 
 	float:left;
-	padding:1px;
-	width:30%;
+
+	width:31%;
+
 	height:100px;
 	margin:2px;
 	color:#fff;
@@ -49,8 +62,15 @@ JQUERY DEFAULT CSS OVERRIDES
 }
 /* landscape view */
 @media screen and (orientation:landscape) {
-	.ui-navbar li .ui-btn{
-		height:4em;
+	#homeWrapper{
+		text-align:center;
+
+	}
+	.homeButton{
+		width:32%;
+		margin:1px 2px 0 1px;
+
+
 	}
 }
 /**Icons**/
